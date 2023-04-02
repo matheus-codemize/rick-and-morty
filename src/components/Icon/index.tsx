@@ -9,14 +9,12 @@ const Icon: React.FC<IconProps> = props => {
 
   const { className, styles } = iconStyle(rest);
 
+  const Tag = icons[name] as keyof JSX.IntrinsicElements;
+
   return (
     <React.Fragment>
       {styles}
-      {React.createElement(icons[name], {
-        className,
-        width: size,
-        height: size,
-      })}
+      <Tag className={className} width={size} height={size} />
     </React.Fragment>
   );
 };
