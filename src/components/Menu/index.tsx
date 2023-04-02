@@ -61,4 +61,6 @@ const Menu: React.FC<MenuProps> = props => {
   );
 };
 
+export * from './types';
+
 export default Menu;
