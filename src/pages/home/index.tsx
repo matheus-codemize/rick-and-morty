@@ -2,10 +2,10 @@ import React, { useState, FormEvent, useContext } from 'react';
 
 import router from 'next/router';
 
-import styles from './styles';
+import styles from './_styles';
 
 import FloatingInput from '@/components/FloatingInput';
-import { Layout } from '@/components/Layout';
+import Layout from '@/components/Layout';
 import Text from '@/components/Text';
 import Title from '@/components/Title';
 import { ScreenContext } from '@/contexts/screen';

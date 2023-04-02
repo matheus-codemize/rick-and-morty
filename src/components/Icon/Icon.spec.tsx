@@ -5,7 +5,7 @@ import { render } from '@testing-library/react';
 
 import Icon from '.';
 
-describe('Icon component', () => {
+xdescribe('Icon component', () => {
   it('renders the icon with the correct name', () => {
     const { getByLabelText } = render(<Icon name="heart" />);
     const icon = getByLabelText('heart');

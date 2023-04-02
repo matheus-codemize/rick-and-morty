@@ -18,7 +18,7 @@ import { ResponseInfo } from '@/api/types';
 import Button from '@/components/Button';
 import FloatingInput from '@/components/FloatingInput';
 import Icon from '@/components/Icon';
-import { Layout } from '@/components/Layout';
+import Layout from '@/components/Layout';
 import Text from '@/components/Text';
 import { ScreenContext } from '@/contexts/screen';
 import { useMyFavoriteCharactersStorage } from '@/storage/characters';

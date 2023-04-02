@@ -5,7 +5,7 @@ import Menu from '../Menu';
 import layoutStyle from './styles';
 import { LayoutProps } from './types';
 
-export const Layout: React.FC<LayoutProps> = props => {
+const Layout: React.FC<LayoutProps> = props => {
   const { children, ...rest } = props;
   const { className, styles } = layoutStyle(rest);
 
@@ -19,3 +19,7 @@ export const Layout: React.FC<LayoutProps> = props => {
     </React.Fragment>
   );
 };
+
+export * from './types';
+
+export default Layout;
