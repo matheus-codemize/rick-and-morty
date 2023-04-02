@@ -3,7 +3,7 @@ type InputOption = {
   value: string;
 };
 
-export type FloatingInputProps = {
+export type InputProps = {
   label: string;
   value: string;
   startFullHeight?: boolean;

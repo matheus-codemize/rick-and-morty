@@ -4,9 +4,9 @@ import Icon from '../Icon';
 import Text from '../Text';
 
 import styles from './styles';
-import { FloatingInputProps } from './types';
+import { InputProps } from './types';
 
-const FloatingInput: React.FC<FloatingInputProps> = props => {
+const Input: React.FC<InputProps> = props => {
   const { label, value, startFullHeight, onChange, options = [] } = props;
 
   const [showOptions, setShowOptions] = useState<boolean>(false);
@@ -32,6 +32,7 @@ const FloatingInput: React.FC<FloatingInputProps> = props => {
           id={`input ${label}`}
           type="text"
           value={value}
+          placeholder={label}
           disabled={!!options.length}
           onChange={event => onChange(event.target.value)}
           className={startFullHeight ? 'start-full-height' : ''}
@@ -72,4 +73,4 @@ const FloatingInput: React.FC<FloatingInputProps> = props => {
 
 export * from './types';
 
-export default FloatingInput;
+export default Input;

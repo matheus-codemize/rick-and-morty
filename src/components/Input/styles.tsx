@@ -32,6 +32,10 @@ const styles = css`
     box-shadow: 1px 1px 2px var(--color-primary);
   }
 
+  input::placeholder {
+    color: transparent;
+  }
+
   input:hover {
     box-shadow: 0 0 5px var(--color-primary);
   }

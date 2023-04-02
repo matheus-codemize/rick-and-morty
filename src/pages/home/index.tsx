@@ -4,7 +4,7 @@ import router from 'next/router';
 
 import styles from './_styles';
 
-import FloatingInput from '@/components/FloatingInput';
+import Input from '@/components/Input';
 import Layout from '@/components/Layout';
 import Text from '@/components/Text';
 import Title from '@/components/Title';
@@ -40,7 +40,7 @@ export default function Home() {
             of information about the world of Rick and Morty.
           </Text>
           <div className="input">
-            <FloatingInput value={search} label="Search" onChange={setSearch} />
+            <Input value={search} label="Search" onChange={setSearch} />
           </div>
         </form>
       </div>

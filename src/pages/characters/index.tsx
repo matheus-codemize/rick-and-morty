@@ -16,8 +16,8 @@ import {
 } from '@/api/character/model';
 import { ResponseInfo } from '@/api/types';
 import Button from '@/components/Button';
-import FloatingInput from '@/components/FloatingInput';
 import Icon from '@/components/Icon';
+import Input from '@/components/Input';
 import Layout from '@/components/Layout';
 import Text from '@/components/Text';
 import { ScreenContext } from '@/contexts/screen';
@@ -158,25 +158,25 @@ const Characters = ({ info, results, query }: CharacterProps) => {
                 searchByFilter();
               }
             }}>
-            <FloatingInput
+            <Input
               startFullHeight
               label="Name"
               value={filter.name as string}
               onChange={value => handleFilter('name', value)}
             />
-            <FloatingInput
+            <Input
               startFullHeight
               label="Type"
               value={filter.type as string}
               onChange={value => handleFilter('type', value)}
             />
-            <FloatingInput
+            <Input
               startFullHeight
               label="Species"
               value={filter.species as string}
               onChange={value => handleFilter('species', value)}
             />
-            <FloatingInput
+            <Input
               startFullHeight
               label="Status"
               value={filter.status as string}

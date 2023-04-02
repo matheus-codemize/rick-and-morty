@@ -4,21 +4,20 @@ import { render, fireEvent } from '@testing-library/react';
 
 import Button from '.';
 
+const text = 'Clique aqui';
+
 describe('Button', () => {
   it('renderiza o botão com o texto correto', () => {
-    const texto = 'Clique aqui';
-    const { getByText } = render(<Button>{texto}</Button>);
+    const { getByText } = render(<Button>{text}</Button>);
 
-    expect(getByText(texto)).toBeInTheDocument();
+    expect(getByText(text)).toBeInTheDocument();
   });
 
   it('chama a função de clique quando o botão é clicado', () => {
     const onClick = jest.fn();
-    const { getByText } = render(
-      <Button onClick={onClick}>Clique aqui</Button>,
-    );
+    const { getByText } = render(<Button onClick={onClick}>{text}</Button>);
 
-    fireEvent.click(getByText('Clique aqui'));
+    fireEvent.click(getByText(text));
 
     expect(onClick).toHaveBeenCalledTimes(1);
   });
