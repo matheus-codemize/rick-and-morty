@@ -13,7 +13,7 @@ const styles = ({
   p {
     text-align: ${align};
     font-weight: ${weight};
-    font-size: var(--font-size-${size});
+    font-size: var(--font-size-${size}, ${size});
     color: ${isValidHex(color) ? color : `var(--color-${color})`};
   }
 
