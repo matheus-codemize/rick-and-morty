@@ -70,10 +70,19 @@ const Characters = ({ info, results, query }: CharacterProps) => {
     status: '',
   });
 
+  useEffect(() => {
+    if (filter.status !== undefined) {
+      searchByFilter();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filter.status]);
+
   const searchByFilter = useCallback(
     async (page = 1) => {
       let results: Array<Character> = [];
       let info: ResponseInfo | null = null;
+
+      console.log(page);
 
       try {
         setShowFilter(false);
@@ -92,12 +101,6 @@ const Characters = ({ info, results, query }: CharacterProps) => {
     },
     [filter],
   );
-
-  useEffect(() => {
-    if (filter.status !== undefined) {
-      searchByFilter();
-    }
-  }, [filter.status, searchByFilter]);
 
   const handleShowFilter = () => {
     setShowFilter(prevValue => !prevValue);
@@ -335,9 +338,7 @@ const Characters = ({ info, results, query }: CharacterProps) => {
             <ul>
               {!pages.includes(1) &&
                 pages.includes(pagination?.pages as number) && (
-                  <li
-                    className="fixed"
-                    onClick={() => searchByFilter(pagination?.pages)}>
+                  <li className="fixed" onClick={() => searchByFilter(1)}>
                     1
                   </li>
                 )}
