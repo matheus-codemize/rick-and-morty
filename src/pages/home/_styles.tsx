@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css';
 
-const styles = css`
+export const styles = css`
   .container {
     flex: 1;
     display: flex;
@@ -36,4 +36,6 @@ const styles = css`
   }
 `;
 
-export default styles;
+const homeStyles = () => <style jsx>{styles}</style>;
+
+export default homeStyles;

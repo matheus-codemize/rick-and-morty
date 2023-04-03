@@ -8,7 +8,7 @@ import Text from '@/components/Text';
 import Title from '@/components/Title';
 import { ScreenContext } from '@/contexts/screen';
 
-import styles from './_styles';
+import { styles } from './_styles';
 
 export default function Home() {
   const [search, setSearch] = useState<string>('');

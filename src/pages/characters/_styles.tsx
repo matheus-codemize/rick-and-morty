@@ -4,7 +4,7 @@ const root = {
   '--profile-border-radius': '8px',
 };
 
-const styles = css`
+export const styles = css`
   .container {
     flex: 1;
     display: flex;
@@ -368,4 +368,6 @@ const styles = css`
   }
 `;
 
-export default styles;
+const characterStyle = () => <style jsx>{styles}</style>;
+
+export default characterStyle;

@@ -25,7 +25,7 @@ import Text from '@/components/Text';
 import { ScreenContext } from '@/contexts/screen';
 import { useMyFavoriteCharactersStorage } from '@/storage/characters';
 
-import styles from './_styles';
+import { styles } from './_styles';
 
 type CharacterProps = {
   info: ResponseInfo;
