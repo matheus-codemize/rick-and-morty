@@ -8,7 +8,10 @@ import { MenuItemProps, MenuProps } from './types';
 const menuItems: Array<MenuItemProps> = [
   { path: '/home', label: 'Home' },
   { path: '/characters', label: 'Characters' },
-  { path: '/about', label: 'About' },
+  {
+    path: 'https://github.com/matheus-codemize/rick-and-morty/blob/main/README.md',
+    label: 'About',
+  },
 ];
 
 const Menu: React.FC<MenuProps> = props => {
