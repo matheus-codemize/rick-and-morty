@@ -2,13 +2,13 @@ import React, { useState, FormEvent, useContext } from 'react';
 
 import router from 'next/router';
 
-import styles from './_styles';
-
 import Input from '@/components/Input';
 import Layout from '@/components/Layout';
 import Text from '@/components/Text';
 import Title from '@/components/Title';
 import { ScreenContext } from '@/contexts/screen';
+
+import styles from './_styles';
 
 export default function Home() {
   const [search, setSearch] = useState<string>('');

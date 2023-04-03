@@ -30,4 +30,8 @@ const getAll = async (data?: RequestCharacter): Promise<ResponseCharacter> => {
   return await api.get(`/character/${filter}`);
 };
 
-export default { getAll };
+const service = {
+  getAll,
+};
+
+export default service;

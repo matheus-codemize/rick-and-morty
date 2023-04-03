@@ -1,8 +1,8 @@
 import css from 'styled-jsx/css';
 
-import { ButtonProps } from './types';
-
 import isValidHex from '@/common/isValidHex';
+
+import { ButtonProps } from './types';
 
 const styles = ({ color, shape }: Partial<ButtonProps>) => css.resolve`
   button {

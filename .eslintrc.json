@@ -3,6 +3,7 @@
     "es2021": true
   },
   "extends": [
+    "next",
     "eslint:recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",

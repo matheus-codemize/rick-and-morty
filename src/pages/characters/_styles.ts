@@ -141,7 +141,7 @@ const styles = css`
     padding: 8px 16px;
     flex-direction: column;
     transform: rotateY(180deg);
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 
   .back::after {

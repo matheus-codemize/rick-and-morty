@@ -1,9 +1,9 @@
 import React, { createContext, useState } from 'react';
 
-import { ThemeContextProps, ThemeProviderProps, ThemeTypeEnum } from './types';
-
 import GlobalStyles from '@/styles/global';
 import { darkTheme, lightTheme } from '@/styles/theme';
+
+import { ThemeContextProps, ThemeProviderProps, ThemeTypeEnum } from './types';
 
 export const ThemeContext = createContext<ThemeContextProps>(
   {} as ThemeContextProps,

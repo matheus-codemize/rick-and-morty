@@ -37,7 +37,7 @@ const Menu: React.FC<MenuProps> = props => {
         router.push(path);
       }
     },
-    [selected],
+    [selected, router],
   );
 
   return (

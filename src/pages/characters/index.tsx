@@ -1,9 +1,12 @@
-import React, { useEffect, useState, useMemo, useContext } from 'react';
+import React, {
+  useEffect,
+  useState,
+  useMemo,
+  useContext,
+  useCallback,
+} from 'react';
 
 import { GetServerSideProps } from 'next';
-import router from 'next/router';
-
-import styles from './_styles';
 
 import characterService, {
   RequestCharacter,
@@ -15,13 +18,14 @@ import {
   CharacterStatusEnum,
 } from '@/api/character/model';
 import { ResponseInfo } from '@/api/types';
-import Button from '@/components/Button';
 import Icon from '@/components/Icon';
 import Input from '@/components/Input';
 import Layout from '@/components/Layout';
 import Text from '@/components/Text';
 import { ScreenContext } from '@/contexts/screen';
 import { useMyFavoriteCharactersStorage } from '@/storage/characters';
+
+import styles from './_styles';
 
 type CharacterProps = {
   info: ResponseInfo;
@@ -66,11 +70,34 @@ const Characters = ({ info, results, query }: CharacterProps) => {
     status: '',
   });
 
+  const searchByFilter = useCallback(
+    async (page = 1) => {
+      let results: Array<Character> = [];
+      let info: ResponseInfo | null = null;
+
+      try {
+        setShowFilter(false);
+
+        const response = await characterService.getAll({ ...filter, page });
+
+        info = response.info;
+        results = response.results;
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setPagination(info);
+        setCharacters(results);
+        setFilter(prevFilter => ({ ...prevFilter, page }));
+      }
+    },
+    [filter],
+  );
+
   useEffect(() => {
     if (filter.status !== undefined) {
       searchByFilter();
     }
-  }, [filter.status]);
+  }, [filter.status, searchByFilter]);
 
   const handleShowFilter = () => {
     setShowFilter(prevValue => !prevValue);
@@ -104,26 +131,6 @@ const Characters = ({ info, results, query }: CharacterProps) => {
 
   const handleFilter = (key: keyof typeof filter, value: any) => {
     setFilter(prevFilter => ({ ...prevFilter, [key]: value }));
-  };
-
-  const searchByFilter = async (page = 1) => {
-    let results: Array<Character> = [];
-    let info: ResponseInfo | null = null;
-
-    try {
-      setShowFilter(false);
-
-      const response = await characterService.getAll({ ...filter, page });
-
-      info = response.info;
-      results = response.results;
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setPagination(info);
-      setCharacters(results);
-      setFilter(prevFilter => ({ ...prevFilter, page }));
-    }
   };
 
   const pages: Array<number> = useMemo(() => {
@@ -306,13 +313,13 @@ const Characters = ({ info, results, query }: CharacterProps) => {
                       align="right">{`${item.episode.length} episodes`}</Text>
                   </div>
                 </div>
-                <Button
+                {/* <Button
                   block
                   color="accent"
                   shape="rounded"
                   onClick={() => router.push(item.url)}>
                   More
-                </Button>
+                </Button> */}
               </div>
             </div>
           ))}

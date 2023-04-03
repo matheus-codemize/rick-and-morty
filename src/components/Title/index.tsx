@@ -1,9 +1,9 @@
 import React from 'react';
 
+import isValidHex from '@/common/isValidHex';
+
 import styles from './styles';
 import { TitleProps } from './types';
-
-import isValidHex from '@/common/isValidHex';
 
 const Title: React.FC<TitleProps> = props => {
   const { align, level, lineColor, lineGap, children } = props;

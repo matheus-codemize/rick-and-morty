@@ -1,8 +1,8 @@
 import css from 'styled-jsx/css';
 
-import { TextProps } from './types';
-
 import isValidHex from '@/common/isValidHex';
+
+import { TextProps } from './types';
 
 const styles = ({
   align,
