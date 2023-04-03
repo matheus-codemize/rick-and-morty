@@ -82,8 +82,6 @@ const Characters = ({ info, results, query }: CharacterProps) => {
       let results: Array<Character> = [];
       let info: ResponseInfo | null = null;
 
-      console.log(page);
-
       try {
         setShowFilter(false);
 
